@@ -14,6 +14,10 @@
   gap: 100px;
 }
 
+/* =========================
+   HEADING
+========================= */
+
 .heading p {
   margin: 0 0 22px;
   color: #d8ad55;
@@ -35,6 +39,10 @@
   color: #d8ad55;
 }
 
+/* =========================
+   DETAILS
+========================= */
+
 .details {
   border-top: 1px solid #292929;
 }
@@ -53,6 +61,19 @@
   letter-spacing: 2px;
 }
 
+/* ADDRESS */
+
+.details address {
+  max-width: 650px;
+  margin: 0;
+  color: #d9dde2;
+  font-size: 15px;
+  line-height: 1.8;
+  font-style: normal;
+}
+
+/* PHONE / EMAIL */
+
 .details p {
   max-width: 650px;
   margin: 0;
@@ -60,6 +81,20 @@
   font-size: 15px;
   line-height: 1.8;
 }
+
+.details a {
+  color: #d9dde2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.details a:hover {
+  color: #d8ad55;
+}
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 900px) {
   .office {
@@ -72,6 +107,10 @@
   }
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 500px) {
   .office {
     padding: 70px 6%;
@@ -82,6 +121,7 @@
     letter-spacing: -2px;
   }
 
+  .details address,
   .details p {
     font-size: 14px;
   }
