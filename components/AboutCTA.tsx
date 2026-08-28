@@ -19,13 +19,17 @@ export default function AboutCTA() {
           </h2>
 
           <p className={styles.description}>
-            Discover personalised numerology guidance based on your
-            name, date of birth and individual numerological profile.
+            Discover personalised numerology guidance with Dr.
+            Khironn Neheru, based on your name, date of birth and
+            individual numerological profile. Gain deeper insight
+            and direction through a personalised numerology
+            consultation.
           </p>
 
           <Link
             href="/appointment"
             className={styles.button}
+            aria-label="Book a numerology consultation with Dr. Khironn Neheru"
           >
             Book A Consultation
             <span>→</span>
@@ -33,7 +37,10 @@ export default function AboutCTA() {
         </div>
 
         {/* RIGHT NUMEROLOGY SYMBOL */}
-        <div className={styles.symbol}>
+        <div
+          className={styles.symbol}
+          aria-label="Numerology symbol"
+        >
           <div className={styles.circleOne}>
             <div className={styles.circleTwo}>
               <div className={styles.circleThree}>
