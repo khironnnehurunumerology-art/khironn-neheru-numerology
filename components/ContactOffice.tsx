@@ -19,23 +19,34 @@ export default function ContactOffice() {
 
           <div>
             <span>ADDRESS</span>
-            <p>
+
+            <address>
               S/O. Penamal Sanjeev Nehru, Plot No. 35,
               Domine Power Building, Beside Ranihill Apartment,
               Opposite SBI Bank, Lanco Hills Road, Manikonda,
               Puppalaguda, K.V. Rangareddy,
               Telangana - 500089
-            </p>
+            </address>
           </div>
 
           <div>
             <span>PHONE</span>
-            <p>9121685513</p>
+
+            <p>
+              <a href="tel:+919121685513">
+                +91 91216 85513
+              </a>
+            </p>
           </div>
 
           <div>
             <span>EMAIL</span>
-            <p>khironnnehurunumerology@gmail.com</p>
+
+            <p>
+              <a href="mailto:khironnnehurunumerology@gmail.com">
+                khironnnehurunumerology@gmail.com
+              </a>
+            </p>
           </div>
 
         </div>
