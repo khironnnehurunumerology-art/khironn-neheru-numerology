@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./ServiceCards.css";
 
 const services = [
@@ -5,37 +6,37 @@ const services = [
     number: "01",
     title: "Personal Numerology",
     description:
-      "Understand the influence of numbers on your personality, strengths, opportunities and life journey.",
+      "Discover personalised numerology insights into your personality, strengths, opportunities and life journey through your name and date of birth.",
   },
   {
     number: "02",
     title: "Name Analysis",
     description:
-      "Explore the numerological significance of your name and discover how name vibrations can influence your journey.",
+      "Explore the numerological significance of your name and understand how name vibrations may influence different areas of your personal journey.",
   },
   {
     number: "03",
     title: "Business Numerology",
     description:
-      "Numerology guidance for business names, branding and important professional decisions.",
+      "Get personalised numerology guidance for business names, branding and important professional decisions to support your business journey.",
   },
   {
     number: "04",
     title: "Career Guidance",
     description:
-      "Gain clarity about career direction and opportunities through personalised numerological analysis.",
+      "Gain personalised numerology insights for career direction, professional opportunities and important decisions related to your working life.",
   },
   {
     number: "05",
     title: "Relationship Numerology",
     description:
-      "Understand numerical compatibility and gain insights into personal relationships and connections.",
+      "Explore numerical compatibility and gain personalised numerology insights into relationships, connections and interpersonal understanding.",
   },
   {
     number: "06",
     title: "Life Guidance",
     description:
-      "Personalised numerology guidance designed to bring greater clarity, balance and direction to your life.",
+      "Receive personalised numerology guidance designed to help you gain clarity, balance and direction across important areas of your life.",
   },
 ];
 
@@ -43,6 +44,7 @@ export default function ServiceCards() {
   return (
     <section className="serviceCards">
       <div className="serviceCardsContainer">
+
         <div className="serviceCardsHeader">
           <span>OUR EXPERTISE</span>
 
@@ -53,26 +55,35 @@ export default function ServiceCards() {
           </h2>
 
           <p>
-            Explore personalised numerology services designed to provide
-            clarity, insight and direction.
+            Explore personalised numerology services by Dr. Khironn
+            Neheru, designed to provide clarity, insight and direction
+            for personal, professional and life decisions.
           </p>
         </div>
 
         <div className="serviceGrid">
           {services.map((service) => (
             <article className="serviceCard" key={service.number}>
-              <span className="serviceNumber">{service.number}</span>
+              <span className="serviceNumber">
+                {service.number}
+              </span>
 
               <div className="serviceCardContent">
                 <h3>{service.title}</h3>
 
                 <p>{service.description}</p>
 
-                <a href="/contact">Explore Service →</a>
+                <Link
+                  href="/contact"
+                  aria-label={`Learn more about ${service.title}`}
+                >
+                  Explore Service →
+                </Link>
               </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
