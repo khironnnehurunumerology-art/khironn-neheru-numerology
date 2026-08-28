@@ -3,9 +3,9 @@
 import { FormEvent, useState } from "react";
 
 const consultationFees = {
-  "Phone Call": 499,
-  "Video Call": 799,
-  "Direct Meeting": 999,
+  "Phone Call": 2500,
+  "Video Call": 3000,
+  "Direct Meeting": 5000,
 };
 
 export default function Appointment() {
