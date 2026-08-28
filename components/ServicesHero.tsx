@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ServicesHero() {
   return (
     <section className="servicesHero">
@@ -15,16 +17,25 @@ export default function ServicesHero() {
           </h1>
 
           <p className="servicesDescription">
-            Discover personalised numerology guidance designed to bring
-            clarity, balance and direction to important areas of your life.
+            Explore personalised numerology services by Dr. Khironn
+            Neheru, designed to provide clarity, insight and direction
+            based on your name, date of birth and individual
+            numerological profile.
           </p>
 
-          <a href="/appointment" className="servicesButton">
+          <Link
+            href="/appointment"
+            className="servicesButton"
+            aria-label="Book a numerology consultation with Dr. Khironn Neheru"
+          >
             Book A Consultation →
-          </a>
+          </Link>
         </div>
 
-        <div className="servicesHeroVisual">
+        <div
+          className="servicesHeroVisual"
+          aria-label="Numerology services"
+        >
           <div className="servicesCircle">
             <div className="servicesCircleInner">
               <span>9</span>
