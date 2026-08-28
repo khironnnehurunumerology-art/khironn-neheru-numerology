@@ -22,16 +22,18 @@ export default function Hero() {
           </h1>
 
           <p className={styles.description}>
-            Dr. Khironn Neheru is a numerologist with more than
-            23 years of experience, continuing a family legacy
-            established in 1987 and serving clients across
-            71 countries.
+            Dr. Khironn Neheru is an experienced numerologist and
+            numerology consultant with more than 23 years of
+            experience. Continuing a family legacy established in
+            1987, he provides personalised numerology guidance to
+            clients across 71 countries.
           </p>
 
           <div className={styles.actions}>
             <Link
               href="/appointment"
               className={styles.primary}
+              aria-label="Book a numerology consultation with Dr. Khironn Neheru"
             >
               Book A Consultation →
             </Link>
@@ -39,6 +41,7 @@ export default function Hero() {
             <Link
               href="/about"
               className={styles.secondary}
+              aria-label="Learn more about Dr. Khironn Neheru and his numerology legacy"
             >
               Explore The Legacy →
             </Link>
@@ -47,7 +50,10 @@ export default function Hero() {
         </div>
 
         {/* VISUAL */}
-        <div className={styles.visual}>
+        <div
+          className={styles.visual}
+          aria-label="Numerology"
+        >
           <div className={styles.circle}>
             <div className={styles.number}>9</div>
           </div>
