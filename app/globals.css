@@ -1,26 +1,1074 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #080808;
+  --text: #f5f2eb;
+  --gold: #d6ad55;
+  --muted: #999;
+  --border: #242424;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+  height: 80px;
+  padding: 0 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo > span {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+
+  color: var(--gold);
+}
+
+.logo strong {
+  display: block;
+  font-size: 16px;
+}
+
+.logo small {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 8px;
+  letter-spacing: 3px;
+
+  color: var(--gold);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar nav a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 0;
+
+  font-size: 13px;
+  color: #aaa;
+
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: var(--text);
+}
+
+
+/* ACTIVE PAGE */
+
+.navbar nav a.active {
+  color: var(--gold);
+}
+
+.navbar nav a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+
+  background: var(--gold);
+}
+
+
+/* BOOK APPOINTMENT */
+
+.book-btn {
+  padding: 11px 18px !important;
+
+  border: 1px solid var(--gold);
+  border-radius: 25px;
+
+  color: var(--gold) !important;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.book-btn:hover {
+  background: var(--gold);
+  color: #111 !important;
+}
+
+.book-btn.active-book {
+  background: var(--gold);
+  color: #111 !important;
+}
+
+
+/* ================================
+   SERVICES HERO
+================================ */
+
+.servicesHero {
+  min-height: calc(100vh - 72px);
+
+  padding: 100px 6%;
+
+  display: flex;
+  align-items: center;
+
+  background: #050505;
+}
+
+.servicesHeroInner {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+
+/* LEFT CONTENT */
+
+.servicesHeroContent {
+  max-width: 620px;
+}
+
+.servicesEyebrow {
+  margin: 0 0 24px;
+
+  color: #d8ad55;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.servicesTitle {
+  margin: 0;
+
+  color: #f5f1e8;
+
+  font-size: clamp(58px, 6vw, 84px);
+
+  font-weight: 600;
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+}
+
+.servicesTitle span {
+  color: #d8ad55;
+}
+
+.servicesDescription {
+  max-width: 570px;
+
+  margin: 30px 0 34px;
+
+  color: #9da5b0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.servicesButton {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 15px 25px;
+
+  border: 1px solid #d8ad55;
+  border-radius: 30px;
+
+  background: #d8ad55;
+  color: #111;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.servicesButton:hover {
+  transform: translateY(-3px);
+
+  background: transparent;
+  color: #d8ad55;
+}
+
+
+/* RIGHT VISUAL */
+
+.servicesHeroVisual {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.servicesCircle {
+  width: 430px;
+  height: 430px;
+
+  border: 1px solid #4d3b1c;
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.servicesCircle::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border: 1px solid #29241a;
+  border-radius: 50%;
+}
+
+.servicesCircle::after {
+  content: "";
+
+  position: absolute;
+
+  width: 270px;
+  height: 270px;
+
+  border: 1px solid #29241a;
+  border-radius: 50%;
+}
+
+.servicesCircleInner {
+  width: 190px;
+  height: 190px;
+
+  border: 1px solid #29241a;
+  border-radius: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.servicesCircleInner span {
+  color: #d8ad55;
+
+  font-size: 120px;
+
+  font-weight: 500;
+
+  line-height: 0.9;
+}
+
+.servicesCircleInner small {
+  margin-top: 16px;
+
+  color: #727985;
+
+  font-size: 8px;
+
+  letter-spacing: 4px;
+}
+
+
+/* ================================
+   SERVICES TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+  .servicesHero {
+    padding: 80px 6%;
+  }
+
+  .servicesHeroInner {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .servicesHeroContent {
+    max-width: 700px;
+  }
+
+  .servicesHeroVisual {
+    display: none;
+  }
+}
+
+
+/* ================================
+   SERVICES MOBILE
+================================ */
+
+@media (max-width: 500px) {
+
+  .servicesHero {
+    min-height: calc(100vh - 70px);
+
+    padding: 70px 6%;
+  }
+
+  .servicesEyebrow {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+  .servicesTitle {
+    font-size: 50px;
+
+    letter-spacing: -2px;
+  }
+
+  .servicesDescription {
+    margin: 24px 0 30px;
+
+    font-size: 14px;
+  }
+
+  .servicesButton {
+    width: 100%;
+
+    justify-content: center;
+  }
+}
+
+
+/* ================================
+   APPOINTMENT HERO
+================================ */
+
+.appointmentHero {
+  min-height: calc(100vh - 72px);
+
+  padding: 100px 6%;
+
+  background: #050505;
+
+  color: #f5f1e8;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.appointmentInner {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+
+/* ================================
+   APPOINTMENT LEFT
+================================ */
+
+.appointmentIntro {
+  max-width: 520px;
+}
+
+.appointmentEyebrow {
+  margin: 0 0 25px;
+
+  color: #d8ad55;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+.appointmentIntro h1 {
+  margin: 0;
+
+  font-size: clamp(56px, 5vw, 76px);
+
+  line-height: 1.02;
+
+  letter-spacing: -2.8px;
+
+  font-weight: 600;
+}
+
+.appointmentIntro h1 span {
+  color: #d8ad55;
+}
+
+.appointmentDescription {
+  max-width: 500px;
+
+  margin: 31px 0 0;
+
+  color: #8f9baa;
+
+  font-size: 16px;
+
+  line-height: 1.85;
+}
+
+.appointmentNote {
+  margin-top: 45px;
+
+  padding: 25px 0;
+
+  border-top: 1px solid #292929;
+
+  border-bottom: 1px solid #292929;
+}
+
+.appointmentNote span {
+  display: block;
+
+  margin-bottom: 11px;
+
+  color: #d8ad55;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.appointmentNote p {
+  margin: 0;
+
+  color: #9da5b0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* ================================
+   APPOINTMENT FORM
+================================ */
+
+.appointmentForm {
+  padding: 40px;
+
+  border: 1px solid #292929;
+
+  background: #080808;
+}
+
+
+/* FORM ROW */
+
+.formRow {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+
+/* FORM GROUP */
+
+.formGroup {
+  margin-bottom: 22px;
+}
+
+.formGroup label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #d8ad55;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* INPUTS */
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 16px 17px;
+
+  border: 1px solid #292929;
+
+  outline: none;
+
+  background: #050505;
+
+  color: #f5f1e8;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  transition: 0.3s;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #59616b;
+
+  font-size: 14px;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: #d8ad55;
+}
+
+.formGroup textarea {
+  resize: vertical;
+
+  min-height: 125px;
+}
+
+.formGroup select {
+  cursor: pointer;
+}
+
+.formGroup select option {
+  background: #080808;
+
+  color: #f5f1e8;
+}
+
+
+/* ================================
+   CONSULTATION TYPE
+================================ */
+
+.consultationOptions {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 5px;
+}
+
+.consultationOption {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 68px;
+
+  padding: 13px 15px;
+
+  border: 1px solid #292929;
+
+  background: #050505;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.consultationOption:hover {
+  border-color: #5a4723;
+
+  background: #0a0a0a;
+}
+
+.consultationOption input {
+  width: 16px;
+  height: 16px;
+
+  margin: 0 11px 0 0;
+
+  accent-color: #d8ad55;
+
+  cursor: pointer;
+}
+
+.consultationOption span {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.consultationOption strong {
+  color: #f5f1e8;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.consultationOption small {
+  color: #d8ad55;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+
+/* SELECTED OPTION */
+
+.consultationOption:has(input:checked) {
+  border-color: #d8ad55;
+
+  background: rgba(216, 173, 85, 0.04);
+}
+
+.consultationOption:has(input:checked) strong {
+  color: #d8ad55;
+}
+
+
+/* ================================
+   SELECTED CONSULTATION
+================================ */
+
+.appointmentSummary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin: -2px 0 23px;
+
+  padding: 15px 17px;
+
+  border: 1px solid #292929;
+
+  background: #0b0b0b;
+}
+
+.appointmentSummary > span {
+  color: #777d86;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+}
+
+.appointmentSummary > strong {
+  color: #f5f1e8;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.appointmentSummary > b {
+  margin-left: auto;
+
+  color: #d8ad55;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* ================================
+   SUBMIT BUTTON
+================================ */
+
+.appointmentSubmit {
+  width: 100%;
+
+  margin-top: 6px;
+
+  padding: 17px 24px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #d8ad55;
+
+  color: #111;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.appointmentSubmit:hover {
+  background: #e3bb68;
+
+  transform: translateY(-2px);
+}
+
+
+/* ================================
+   APPOINTMENT TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+  .appointmentHero {
+    padding: 80px 6%;
+  }
+
+  .appointmentInner {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .appointmentIntro {
+    max-width: 700px;
+  }
+
+  .consultationOptions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ================================
+   APPOINTMENT MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .appointmentHero {
+    padding: 65px 6%;
+  }
+
+  .appointmentIntro h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+  .appointmentDescription {
+    font-size: 14px;
+  }
+
+  .appointmentNote p {
+    font-size: 14px;
+  }
+
+  .appointmentForm {
+    padding: 25px 20px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .consultationOptions {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .consultationOption {
+    min-height: 60px;
+  }
+
+  .appointmentSummary {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 8px 12px;
+  }
+
+  .appointmentSummary > b {
+    margin-left: auto;
+  }
+}
+
+
+/* ================================
+   MOBILE NAVIGATION
+================================ */
+
+.menuButton {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+
+  background: transparent;
+
+  cursor: pointer;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.menuButton span {
+  display: block;
+
+  width: 19px;
+  height: 1px;
+
+  background: var(--text);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+/* ================================
+   MOBILE NAV
+================================ */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    height: 70px;
+
+    padding: 0 6%;
+
+    position: relative;
+  }
+
+  .logo > span {
+    width: 36px;
+    height: 36px;
+
+    font-size: 13px;
+  }
+
+  .logo strong {
+    font-size: 14px;
+  }
+
+  .logo small {
+    font-size: 7px;
+
+    letter-spacing: 2.5px;
+  }
+
+  /* HAMBURGER */
+
+  .menuButton {
+    display: flex;
+  }
+
+  /* MOBILE NAV */
+
+  .navbar nav {
+    position: absolute;
+
+    top: 70px;
+
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 15px 6% 25px;
+
+    background: #080808;
+
+    border-bottom: 1px solid var(--border);
+
+    z-index: 100;
+  }
+
+  .navbar nav.nav-open {
+    display: flex;
+  }
+
+  .navbar nav a {
+    width: 100%;
+
+    padding: 15px 0;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #171717;
+  }
+
+  .navbar nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* ACTIVE */
+
+  .navbar nav a.active {
+    color: var(--gold);
+  }
+
+  .navbar nav a.active::after {
+    display: none;
+  }
+
+  /* BOOK BUTTON */
+
+  .navbar nav .book-btn {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 13px 18px !important;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 25px;
+  }
+
+  /* HAMBURGER → X */
+
+  .menuButton.menuActive span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menuButton.menuActive span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menuButton.menuActive span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
 }

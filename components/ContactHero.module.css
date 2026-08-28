@@ -1,0 +1,182 @@
+.contactHero {
+  padding: 85px 6% 70px;
+  background: #050505;
+  color: #f5f1e8;
+
+  display: flex;
+  align-items: center;
+}
+
+.contactHeroInner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 90px;
+
+  align-items: center;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.contactEyebrow {
+  margin: 0 0 22px;
+
+  color: #d8ad55;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.contactHero h1 {
+  margin: 0;
+
+  max-width: 700px;
+
+  color: #f5f1e8;
+
+  font-size: clamp(56px, 5.5vw, 78px);
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+  font-weight: 600;
+
+  white-space: normal;
+}
+
+.contactHero h1 span {
+  color: #d8ad55;
+}
+
+.contactIntro {
+  max-width: 560px;
+
+  margin: 28px 0 0;
+
+  color: #8f9baa;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================
+   CONTACT DETAILS
+========================= */
+
+.contactDetails {
+  width: 100%;
+
+  border-top: 1px solid #292929;
+}
+
+.contactDetails > div {
+  padding: 24px 0;
+
+  border-bottom: 1px solid #292929;
+}
+
+.contactDetails span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #d8ad55;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.contactDetails p {
+  margin: 0;
+
+  color: #d9dde2;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .contactHero {
+    padding: 70px 6% 60px;
+  }
+
+  .contactHeroInner {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .contactHero h1 {
+    font-size: 60px;
+    letter-spacing: -2.5px;
+  }
+
+  .contactIntro {
+    font-size: 15px;
+  }
+
+  .contactDetails {
+    max-width: 700px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+  .contactHero {
+    padding: 60px 6% 50px;
+  }
+
+  .contactHeroInner {
+    gap: 40px;
+  }
+
+  .contactEyebrow {
+    margin-bottom: 18px;
+
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .contactHero h1 {
+    font-size: 46px;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .contactIntro {
+    margin-top: 22px;
+
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .contactDetails > div {
+    padding: 20px 0;
+  }
+
+  .contactDetails span {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .contactDetails p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+}

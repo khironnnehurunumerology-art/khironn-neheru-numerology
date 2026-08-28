@@ -1,0 +1,158 @@
+.hero {
+  min-height: calc(100vh - 70px);
+  padding: 55px 6%;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.content {
+  max-width: 680px;
+}
+
+.eyebrow {
+  color: #d8ad55;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  color: #f5f1e8;
+  font-size: clamp(64px, 6vw, 88px);
+  line-height: 0.96;
+  letter-spacing: -2.5px;
+  white-space: nowrap;
+}
+
+.gold {
+  color: #d8ad55;
+}
+
+.description {
+  max-width: 610px;
+  margin: 30px 0 0;
+  color: #9da5b0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.primary,
+.secondary {
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.primary {
+  background: #d8ad55;
+  color: #111;
+}
+
+.secondary {
+  border: 1px solid #333;
+  color: #f5f1e8;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+}
+
+.secondary:hover {
+  border-color: #d8ad55;
+  color: #d8ad55;
+}
+
+.visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 460px;
+  height: 460px;
+  border: 1px solid #4d3b1c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle::before,
+.circle::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #29241a;
+  border-radius: 50%;
+}
+
+.circle::before {
+  inset: 30px;
+}
+
+.circle::after {
+  inset: 70px;
+}
+
+.number {
+  color: #d8ad55;
+  font-size: 160px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .visual {
+    display: none;
+  }
+
+  .title {
+    white-space: normal;
+    font-size: 58px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    padding: 50px 6%;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primary,
+  .secondary {
+    text-align: center;
+  }
+}

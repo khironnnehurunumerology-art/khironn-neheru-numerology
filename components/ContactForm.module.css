@@ -1,0 +1,255 @@
+.contactFormSection {
+  padding: 75px 6% 80px;
+  background: #080808;
+  border-top: 1px solid #1f1f1f;
+}
+
+.contactFormContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 85px;
+  align-items: center;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.formIntro {
+  padding-top: 0;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+
+  color: #d8ad55;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.formIntro h2 {
+  margin: 0;
+
+  color: #f5f1e8;
+
+  font-size: clamp(52px, 5vw, 70px);
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+  font-weight: 600;
+}
+
+.formIntro h2 span {
+  color: #d8ad55;
+}
+
+.formIntro > p:last-child {
+  max-width: 470px;
+
+  margin: 26px 0 0;
+
+  color: #8f9baa;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form {
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #d8ad55;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 15px 16px;
+
+  border: 1px solid #292929;
+  outline: none;
+
+  background: #050505;
+  color: #f5f1e8;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition: border-color 0.3s ease;
+}
+
+.field input {
+  height: 52px;
+}
+
+.field textarea {
+  min-height: 125px;
+
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #555b63;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #d8ad55;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.form button {
+  margin-top: 2px;
+
+  padding: 15px 30px;
+
+  border: 1px solid #d8ad55;
+  border-radius: 30px;
+
+  background: #d8ad55;
+  color: #111;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.form button:hover {
+  background: transparent;
+  color: #d8ad55;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .contactFormSection {
+    padding: 65px 6% 70px;
+  }
+
+  .contactFormContainer {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .formIntro {
+    max-width: 700px;
+  }
+
+  .formIntro h2 {
+    font-size: 58px;
+  }
+
+  .formIntro > p:last-child {
+    max-width: 600px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .contactFormSection {
+    padding: 55px 6% 60px;
+  }
+
+  .contactFormContainer {
+    gap: 38px;
+  }
+
+  .eyebrow {
+    margin-bottom: 17px;
+
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .formIntro h2 {
+    font-size: 46px;
+
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .formIntro > p:last-child {
+    margin-top: 20px;
+
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .field {
+    margin-bottom: 18px;
+  }
+
+  .field input {
+    height: 50px;
+  }
+
+  .field textarea {
+    min-height: 120px;
+  }
+
+  .form button {
+    width: 100%;
+    justify-content: center;
+  }
+}
