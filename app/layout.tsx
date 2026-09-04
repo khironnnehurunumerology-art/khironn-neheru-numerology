@@ -2,32 +2,33 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://khironnnehuru.com"),
 
   title: {
-  default: "Dr. Khironn Neheru | Numerologist & Numerology Consultant",
-  template: "%s | Dr. Khironn Neheru",
-},
+    default: "Dr. Khironn Neheru | Numerologist & Numerology Consultant",
+    template: "%s | Dr. Khironn Neheru",
+  },
 
   description:
-  "Dr. Khironn Neheru is a numerologist and numerology consultant with 23+ years of experience, continuing a family legacy since 1987 and guiding clients across 71 countries.",
+    "Dr. Khironn Neheru is a numerologist and numerology consultant with 23+ years of experience, continuing a family legacy since 1987 and guiding clients across 71 countries.",
 
   keywords: [
-  "Dr. Khironn Neheru",
-  "Khironn Neheru",
-  "Khironn Neheru Numerology",
-  "Numerologist in Hyderabad",
-  "Numerology Consultant",
-  "Numerology Consultation",
-  "Numerology Expert",
-  "Numerology Reading",
-  "Phone Numerology Consultation",
-  "Video Numerology Consultation",
-  "Direct Numerology Consultation",
-  "Numerology Services",
-],
+    "Dr. Khironn Neheru",
+    "Khironn Neheru",
+    "Khironn Neheru Numerology",
+    "Numerologist in Hyderabad",
+    "Numerology Consultant",
+    "Numerology Consultation",
+    "Numerology Expert",
+    "Numerology Reading",
+    "Phone Numerology Consultation",
+    "Video Numerology Consultation",
+    "Direct Numerology Consultation",
+    "Numerology Services",
+  ],
 
   authors: [
     {
@@ -72,6 +73,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -93,6 +95,8 @@ export default function RootLayout({
         <Navbar />
 
         <main>{children}</main>
+
+        <Footer />
       </body>
     </html>
   );

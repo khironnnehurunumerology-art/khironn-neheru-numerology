@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  ["Home", "/"],
-  ["About", "/about"],
-  ["Services", "/services"],
-  ["Contact", "/contact"],
+  ["Home", "#home"],
+  ["About", "#about"],
+  ["Services", "#services"],
+  ["Contact", "#contact"],
 ];
 
 export default function Navbar() {
@@ -24,7 +24,7 @@ export default function Navbar() {
 
       {/* LOGO */}
       <Link
-        href="/"
+        href="/#home"
         className={`logo ${pathname === "/" ? "active-logo" : ""}`}
         onClick={closeMenu}
       >
@@ -38,13 +38,21 @@ export default function Navbar() {
 
       {/* DESKTOP NAVIGATION */}
       <nav className={menuOpen ? "nav-open" : ""}>
+
         {links.map(([name, href]) => {
-          const isActive = pathname === href;
+          const finalHref =
+            pathname === "/" ? href : `/${href}`;
+
+          const isActive =
+            (name === "Home" && pathname === "/") ||
+            (name === "About" && pathname === "/about") ||
+            (name === "Services" && pathname === "/services") ||
+            (name === "Contact" && pathname === "/contact");
 
           return (
             <Link
-              key={href}
-              href={href}
+              key={name}
+              href={finalHref}
               className={isActive ? "active" : ""}
               onClick={closeMenu}
             >
@@ -62,6 +70,7 @@ export default function Navbar() {
         >
           Book Appointment
         </Link>
+
       </nav>
 
       {/* MOBILE MENU BUTTON */}
